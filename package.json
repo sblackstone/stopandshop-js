@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "chrome-cookies-secure": "^1.3.2",
+    "esm": "^3.2.25",
+    "puppeteer": "^5.5.0"
+  },
+  "devDependencies": {
+    "pryjs": "^1.0.3"
+  }
+}
