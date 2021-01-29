@@ -3,7 +3,7 @@ const pry = require('pryjs');
 const puppeteer = require('puppeteer');
 
 
-const getSession = async () => {
+const getCookies = async () => {
   const browser = await puppeteer.launch({ headless: true  });
   const page = await browser.newPage();
   await page.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36");
@@ -28,9 +28,11 @@ const getSession = async () => {
   await button.click();
   await page.waitForSelector('#alert-button_primary-button');
 
-  await page.goto('https://stopandshop.com', {waitUntil: 'networkidle2'});
+  await page.goto('https://stopandshop.com', { waitUntil: 'networkidle2' });
+  await page.goto('https://stopandshop.com', { waitUntil: 'networkidle2' });
+
   return page.cookies();
 };
 
 
-module.exports = getSession;
+module.exports = getCookies;
